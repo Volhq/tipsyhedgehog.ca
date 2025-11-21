@@ -1,0 +1,81 @@
+.top-menu-block {
+
+    position: fixed; left: 0; right: 0; top: 0; z-index: 100;
+    background: #a8a9ab none; transition: all 0.3s;
+
+    .inner-row.menu-button {
+        display: flex; flex-flow: row nowrap; justify-content: flex-end;
+        padding: 12px 0;
+    }
+
+    .inner-row.menu-container {
+        display: none; padding: 24px 0;
+
+        .menu {
+            padding: 0; margin: 0;
+        
+            li {
+                list-style-type: none; font-size: 1.125rem;
+                margin-bottom: 12px; padding: 0; text-align: center;
+                &:last-child { margin-bottom: 0; }
+        
+                a {
+                    color: white; text-decoration: none; font-weight: 400; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+                    transition: all 0.3s; display: inline-block; padding: 0.5em 1em; border-radius: 2px;
+                    text-transform: uppercase; font-family: var(--font-complementary);
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.15);
+                    }
+                }
+
+                &.social {
+                    display: flex; flex-flow: row nowrap; justify-content: center; align-items: center;
+                    a {
+                        margin: 0 7px; padding: 0; cursor: pointer;
+                        display: block; width: 39px; height: 39px; border-radius: 50%; overflow: hidden;
+                        background-color: #020304; background-repeat: no-repeat;
+                        background-position: center center; background-size: contain;
+                        &.twitter { background-image: url("menu-icon-twitter.png"); }
+                        &.fb { background-image: url("menu-icon-facebook.png"); }
+                    }
+                }
+            }
+        }
+    }
+
+    &.menu-is-open { background: #a8a9ab none; }
+}
+
+.home .top-menu-block {
+    background: transparent none;
+    &.menu-is-open { background: rgba(#524bf0, 0.95) none; }
+}
+
+.menu-toggle-button {
+    width: 56px; height: 56px; position: relative; cursor: pointer; transition: all 0.3s;
+    border-radius: 50%; overflow: hidden;
+
+
+    span {
+      display: block; position: absolute; z-index: 110; top: 27px; left: 12px; right: 12px; height: 2px;
+      background-color: #ffffff;
+      &:before, &:after {
+        position: absolute; display: block; left: 0; width: 100%;
+        height: 2px; background-color: #ffffff; content: " ";
+        transition-duration: 0.3s, 0.3s; transition-delay: 0.3s, 0s;
+      }
+
+      &:before { top: -6px; transition-property: top, transform; }
+      &:after { bottom: -6px; transition-property: bottom, transform; }
+    }
+
+    &.menu-is-open {
+        span {
+            background: none;
+            &:before { top: 0; transform: rotate(45deg); }
+            &:after { bottom: 0; transform: rotate(-45deg); }
+            &:before, &:after { transition-delay: 0s, 0.3s; }
+        }
+    }
+}	// .top-menu-toggle-btn
+.home .menu-toggle-button.scrolled { background-color: rgba(#ae2cf1, 0.5) !important; }

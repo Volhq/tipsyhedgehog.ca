@@ -1,0 +1,40 @@
+.footer {
+    .contact-us p {
+        font-family: var(--font-complementary); font-size: 0.875rem; text-align: center;
+    }
+
+    .social {
+        display: flex; flex-flow: row nowrap; justify-content: center; align-items: center;
+
+        a {
+            margin: 0 7px; padding: 0; cursor: pointer;
+            display: block; width: 39px; height: 39px; border-radius: 50%; overflow: hidden;
+            background-repeat: no-repeat; background-position: center center; background-size: contain;
+            &.twitter { background-image: url("twitter.png"); }
+            &.fb { background-image: url("facebook.png"); }
+            &.youtube { background-image: url("youtube.png"); }
+        }
+    }
+
+    .bottom-section {
+
+        .links {
+            margin: 2rem 0 0; padding: 0;
+            display: flex; flex-flow: row wrap; justify-content: center; align-items: flex-start;
+
+            li {
+                list-style-type: none; margin: 0 6px 12px;
+
+                a {
+                    font-family: var(--font-complementary); text-transform: uppercase;
+                    text-decoration: none; font-weight: 400; font-size: 0.875rem; white-space: nowrap;
+                }
+            }
+        }
+
+        img { display: block; margin: 0 auto 40px; width: 120px; height: auto; }
+
+        .copyright { color: var(--color-brand-silver); font-size: 0.875rem; text-align: center; margin: 0 0 26px; }
+
+    }
+}
